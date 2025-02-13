@@ -5,7 +5,7 @@ import {
     integer 
 } from 'drizzle-orm/sqlite-core';
 
-export const user = sqliteTable('user', {
+export const userLogs = sqliteTable('user', {
 	id: text(),
 	email: text(),
 	full_name: text(),
