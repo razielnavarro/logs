@@ -1,4 +1,4 @@
-import { 	 } from 'drizzle-orm/d1';
+import { drizzle } from 'drizzle-orm/d1';
 import { Hono } from 'hono';
 import { user, loginLogs, eventLogs } from './entities';
 import { inputSchema } from './validators/inputValidator';
