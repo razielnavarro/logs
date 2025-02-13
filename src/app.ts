@@ -1,13 +1,12 @@
 import { Hono } from "hono";
-
-import type { Env } from "./common/types";
+import { Env } from "./common/types";
 import {
-  backgroundController,
-  categoryController,
-  giftCardController,
+  eventsController,
+  userController,
+  loginController,
 } from "./controllers";
 
-const app = new Hono<Env>();
+const app = new Hono<{Bindings: Env}>();
 
 app.route("/events", eventsController);
 app.route("/user", userController);
