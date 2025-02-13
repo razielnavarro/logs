@@ -3,10 +3,7 @@ import { Hono } from 'hono';
 import { user, loginLogs, eventLogs } from './entities';
 import { inputSchema } from './validators/inputValidator';
 import { getConnInfo } from 'hono/cloudflare-workers'
-
-export type Env = {
-	DB: D1Database;
-};
+import { Env } from './common/types';
 
 const app = new Hono<{ Bindings: Env }>();
 app.route("/", app);
