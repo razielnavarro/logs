@@ -12,7 +12,7 @@
       {
         "binding": "DB",
         "database_name": "logs-info",
-        "database_id": "4ebb385d-4846-4138-92d6-9da82b345a3a ",
+        "database_id": "4ebb385d-4846-4138-92d6-9da82b345a3a",
         "migrations_dir": "drizzle/migrations"
       }
     ]
