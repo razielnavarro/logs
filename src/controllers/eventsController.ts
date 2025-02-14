@@ -4,9 +4,9 @@ import { eventLogs } from '../entities';
 import { inputSchema } from '../validators/inputValidator';
 import { Env } from '../common/types';
 
-export const eventsController = new Hono<{Bindings: Env}>();
+export const eventsController = new Hono<Env>();
 
-eventsController.post('/events', async (c) => {
+eventsController.post('/', async (c) => {
     const db = drizzle(c.env.DB);
     const data = await c.req.json();
     const parsed = inputSchema.safeParse(data);

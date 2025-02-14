@@ -5,9 +5,9 @@ import { inputSchema } from '../validators/inputValidator';
 import { Env } from '../common/types';
 import { getConnInfo } from 'hono/cloudflare-workers'
 
-export const loginController = new Hono<{Bindings: Env}>();
+export const loginController = new Hono<Env>();
 
-loginController.post('/login', async (c) => {
+loginController.post('/', async (c) => {
     const db = drizzle(c.env.DB);
     const data = await c.req.json();
     const info = getConnInfo(c);

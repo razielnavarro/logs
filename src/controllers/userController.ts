@@ -4,9 +4,9 @@ import { userLogs } from '../entities';
 import { inputSchema } from '../validators/inputValidator';
 import { Env } from '../common/types';
 
-export const userController = new Hono<{Bindings: Env}>();
+export const userController = new Hono<Env>();
 
-userController.post('/user', async (c) => {
+userController.post('/', async (c) => {
     const db = drizzle(c.env.DB);
     const data = await c.req.json();
     const parsed = inputSchema.safeParse(data);
