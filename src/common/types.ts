@@ -1,3 +1,3 @@
 export type Env = {
-    DB: D1Database;
+    Bindings: CloudflareBindings
 };

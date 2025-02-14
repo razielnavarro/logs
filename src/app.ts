@@ -6,7 +6,7 @@ import {
   loginController,
 } from "./controllers";
 
-const app = new Hono<{Bindings: Env}>();
+const app = new Hono<Env>();
 
 app.route("/events", eventsController);
 app.route("/user", userController);
