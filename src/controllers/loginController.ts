@@ -18,7 +18,7 @@ loginController.post('/', apiKeyMiddleware, async (c) => {
     if (!parsed.success) {
         return c.json({ error: parsed.error }, 400);
     }
-    const [record] = await db.insert(loginLogs).values(data).returning();
+    const [record] = await db.insert(loginLogs).values(inputData).returning();
     return c.json({ record });
 });
 
