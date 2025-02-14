@@ -3,10 +3,11 @@ import { drizzle } from 'drizzle-orm/d1';
 import { eventLogs } from '../entities';
 import { inputSchema } from '../validators/inputValidator';
 import { Env } from '../common/types';
+import { apiKeyMiddleware } from "../middleware";
 
 export const eventsController = new Hono<Env>();
 
-eventsController.post('/', async (c) => {
+eventsController.post('/', apiKeyMiddleware, async (c) => {
     const db = drizzle(c.env.DB);
     const data = await c.req.json();
     const parsed = inputSchema.safeParse(data);

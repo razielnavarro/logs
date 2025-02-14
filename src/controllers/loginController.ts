@@ -4,10 +4,11 @@ import { loginLogs } from '../entities';
 import { inputSchema } from '../validators/inputValidator';
 import { Env } from '../common/types';
 import { getConnInfo } from 'hono/cloudflare-workers'
+import { apiKeyMiddleware } from "../middleware";
 
 export const loginController = new Hono<Env>();
 
-loginController.post('/', async (c) => {
+loginController.post('/', apiKeyMiddleware, async (c) => {
     const db = drizzle(c.env.DB);
     const data = await c.req.json();
     const info = getConnInfo(c);
