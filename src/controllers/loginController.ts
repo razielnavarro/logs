@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { drizzle } from 'drizzle-orm/d1';
 import { loginLogs } from '../entities';
-import { inputSchema } from '../validators/inputValidator';
+import { inputSchema } from '../schemas/inputValidator';
 import { Env } from '../common/types';
 import { getConnInfo } from 'hono/cloudflare-workers'
 import { apiKeyMiddleware } from "../middleware";
