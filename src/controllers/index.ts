@@ -1,3 +1,3 @@
-export * from "./eventsController";
-export * from "./userController";
-export * from "./loginController";
+export * from "./events.controller";
+export * from "./user.controller";
+export * from "./login.controller";
