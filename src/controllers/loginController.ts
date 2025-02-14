@@ -1,7 +1,6 @@
 import { Hono } from "hono";
 import { drizzle } from 'drizzle-orm/d1';
 import { loginLogs } from '../entities';
-import { inputSchema } from '../schemas/user.schema';
 import { Env } from '../common/types';
 import { getConnInfo } from 'hono/cloudflare-workers'
 import { apiKeyMiddleware } from "../middleware";
@@ -14,12 +13,13 @@ loginController.post('/', apiKeyMiddleware, async (c) => {
     const info = getConnInfo(c);
     const ip = info.remote.address || 'Unknown';
     const inputData = { ...data, ip };
-    const parsed = inputSchema.safeParse(inputData);
-    if (!parsed.success) {
-        return c.json({ error: parsed.error }, 400);
-    }
+    try {
     const [record] = await db.insert(loginLogs).values(inputData).returning();
     return c.json({ record });
+    } catch (error) {
+        console.error("Error inserting data: ", error);
+        return c.json({ error: "Internal Server Error" }, 500);
+        }
 });
 
 
