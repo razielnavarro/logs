@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { drizzle } from 'drizzle-orm/d1';
 import { eventLogs } from '../entities';
-import { inputSchema } from '../schemas/inputValidator';
+import { inputSchema } from '../schemas/user.schema';
 import { Env } from '../common/types';
 import { apiKeyMiddleware } from "../middleware";
 
