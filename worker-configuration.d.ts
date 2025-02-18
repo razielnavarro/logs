@@ -3,4 +3,5 @@
 interface CloudflareBindings {
     DB: D1Database;
     API_KEY: string;
+    JWT_SECRET: string;
 }
