@@ -1,4 +1,3 @@
-// import { randomBytes } from "node:crypto";
 import { SnowflakeId } from "@akashrajpurohit/snowflake-id";
 
 export const generateId = () => {
@@ -8,7 +7,3 @@ export const generateId = () => {
   });
   return snowflake.generate();
 };
-
-// export const generateRedemptionCode = () => {
-//   return randomBytes(4).toString("hex").toUpperCase();
-// };
