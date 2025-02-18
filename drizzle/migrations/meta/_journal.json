@@ -8,6 +8,48 @@
       "when": 1738362483201,
       "tag": "0000_kind_shatterstar",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1739799454125,
+      "tag": "0001_flowery_manta",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1739804226601,
+      "tag": "0002_smart_blur",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1739806121861,
+      "tag": "0003_sharp_outlaw_kid",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1739806732369,
+      "tag": "0004_stormy_hydra",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1739808228573,
+      "tag": "0005_volatile_salo",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1739823573242,
+      "tag": "0006_bouncy_mindworm",
+      "breakpoints": true
     }
   ]
 }
